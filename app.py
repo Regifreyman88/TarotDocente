@@ -30,6 +30,22 @@ arcanos_mayores = [
     {
         "titulo": "El nudo gordiano", "imagen": "nudo.png",
         "interpretacion": "Enfrenta una contradicción o dilema sin solución evidente. Habita la paradoja antes de resolver.",
+        # --- MÓDULO DE APOYO ---
+# Este código añade una sección en la barra lateral
+
+st.sidebar.markdown("---")
+st.sidebar.header("Apoya este Proyecto")
+st.sidebar.write(
+    """
+    ¿Te han gustado estas herramientas? 
+    Tu apoyo me ayuda a seguir creando y mejorando más juegos educativos y creativos.
+    
+    ¡Gracias por tu generosidad!
+    """
+)
+
+# Reemplaza la URL con tu enlace personal de Buy Me a Coffee
+st.sidebar.link_button("Invítame un café ☕", "https://coff.ee/regifreyman8") # URL corta de tu página
         "pregunta_clave": "N/A",
         "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
         "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
