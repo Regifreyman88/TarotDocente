@@ -55,38 +55,4 @@ arcanos_de_tension = [
         "pregunta": "¿Cuándo sientes que la IA o las redes sociales te manipulan?",
         "traduccion_didactica": "Reconoce la influencia externa o invisible en la toma de decisiones (datos, algoritmos, fuentes, autoridad).",
         "imagen": "tension_3.png",
-        "funcion_simbolica": "Provoca una pregunta difícil.",
-        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
-    }
-]
-
-arcanos_ergodicos = [
-    {
-        "titulo": "Adición", "imagen": "adicion.png",
-        "aplicacion_generica": "Agrega un elemento disruptivo (dato nuevo, variable, personaje, condición límite).",
-        "funcion_simbolica": "Interviene. Transforma.",
-        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
-    },
-    {
-        "titulo": "Omisión", "imagen": "omision.png",
-        "aplicacion_generica": "Elimina una pieza clave y analiza cómo cambia el sistema, discurso o fenómeno.",
-        "funcion_simbolica": "Interviene. Transforma.",
-        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
-    },
-    {
-        "titulo": "Transposición", "imagen": "transposicion.png",
-        "aplicacion_generica": "Reorganiza los pasos, eventos, etapas o argumentos. Cambia el orden y observa los efectos.",
-        "funcion_simbolica": "Interviene. Transforma.",
-        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
-    },
-    {
-        "titulo": "Permutación", "imagen": "permutacion.png",
-        "aplicacion_generica": "Intercambia funciones, roles o significados entre dos elementos del sistema.",
-        "funcion_simbolica": "Interviene. Transforma.",
-        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
-    }
-]
-
-herramientas_del_creador = [
-    {
-        "titulo": "P
+        "funcion_
