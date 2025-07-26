@@ -1,193 +1,159 @@
 import streamlit as st
 import random
 
-# --- 1. Definición de los Mazos de Cartas ---
-# ¡Asegúrate de que tus archivos de imagen tengan estos nombres exactos!
+st.set_page_config(page_title="Tarot Docente", page_icon="🔮", layout="wide")
+
+# --- 1. Definición de TODOS los Mazos con Información Didáctica ---
 
 arcanos_mayores = [
     {
-        "titulo": "I. LA CICATRIZ COMO TEXTO",
-        "descripcion": "El acto de exhumar la narrativa no desde el pedestal del logro, sino desde la topografía de la fractura.",
-        "aforismo": "Tu resiliencia no se mide por no haberte roto, sino por la forma en que la luz, ahora, entra a través de tus grietas.",
-        "imagen": "cicatriz.png"
+        "titulo": "La cicatriz como texto", "imagen": "cicatriz.png",
+        "interpretacion": "Explora el error, el fallo o la ruptura como fuente de conocimiento.",
+        "pregunta_clave": "¿Qué nos enseña lo que salió mal?",
+        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
+        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
     },
     {
-        "titulo": "II. EL EXILIO DE LA PERSPECTIVA",
-        "descripcion": "El destierro voluntario de la propia mirada para ocupar, por un tiempo, el territorio del otro.",
-        "aforismo": "Para entender la fuerza de tu argumento, primero debes aprender a destruirlo con las armas de tu enemigo.",
-        "imagen": "exilio.png"
+        "titulo": "El exilio de la perspectiva", "imagen": "exilio.png",
+        "interpretacion": "Obliga a tomar otro punto de vista. Cambia de rol, contexto o escala.",
+        "pregunta_clave": "¿Cómo vería esto un otro radical?",
+        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
+        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
     },
     {
-        "titulo": "III. EL ORÁCULO ENGAÑOSO",
-        "descripcion": "Usar la IA no para obtener respuestas, sino para poner a prueba la fortaleza de las propias preguntas.",
-        "aforismo": "Una pregunta débil busca una respuesta en la IA. Una pregunta fuerte busca una debilidad en la IA.",
-        "imagen": "oraculo.png"
+        "titulo": "El oráculo engañoso", "imagen": "oraculo.png",
+        "interpretacion": "Identifica creencias asumidas, ideas falsas o simplificaciones.",
+        "pregunta_clave": "¿Qué parece cierto pero no lo es del todo?",
+        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
+        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
     },
     {
-        "titulo": "IV. EL NUDO GORDIANO",
-        "descripcion": "La capacidad de sostener ideas antagónicas en la mente, no para resolverlas, sino para habitar en la tensión fértil que generan.",
-        "aforismo": "La creatividad no nace de resolver la contradicción, sino de hacerla habitable. Y después, fértil.",
-        "imagen": "nudo.png"
-    },
-    {
-        "titulo": "V. LA ENCARNACIÓN DEL FANTASMA",
-        "descripcion": "La traducción forzosa de una abstracción a un artefacto tangible.",
-        "aforismo": "Si no puedes construirlo, aún no lo has entendido. Nombrar es el eco, construir es la voz.",
-        "imagen": "fantasma.png"
+        "titulo": "El nudo gordiano", "imagen": "nudo.png",
+        "interpretacion": "Enfrenta una contradicción o dilema sin solución evidente. Habita la paradoja antes de resolver.",
+        "pregunta_clave": "N/A",
+        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
+        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
     }
 ]
 
 arcanos_de_tension = [
     {
-        "titulo": "PREGUNTA PELIGROSA",
-        "pregunta": "¿Qué perderías si te vuelves verdaderamente creativo?",
-        "imagen": "tension_1.png"
-    },
-    {
-        "titulo": "PREGUNTA PELIGROSA",
         "pregunta": "¿Qué historia te estás contando que entorpece tu camino?",
-        "imagen": "tension_2.png"
+        "traduccion_didactica": "Identifica una narrativa limitante o una interpretación automatizada del problema.",
+        "imagen": "tension_1.png", # Asegúrate de tener los nombres correctos
+        "funcion_simbolica": "Provoca una pregunta difícil.",
+        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
     },
     {
-        "titulo": "PREGUNTA PELIGROSA",
-        "pregunta": "¿Cuándo sientes que la IA generativa o las Redes Sociales te manipulan?",
-        "imagen": "tension_3.png"
+        "pregunta": "¿Qué perderías si no pudieras pensar creativamente?",
+        "traduccion_didactica": "Identifica la dependencia de un solo tipo de solución. Busca la función del pensamiento divergente.",
+        "imagen": "tension_2.png",
+        "funcion_simbolica": "Provoca una pregunta difícil.",
+        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
     },
     {
-        "titulo": "PREGUNTA PELIGROSA",
-        "pregunta": "Describe un acontecimiento de tu vida que, tras una sensación, te llevó a un descubrimiento que cambió el curso de los hechos.",
-        "imagen": "tension_4.png"
+        "pregunta": "¿Cuándo sientes que la IA o las redes sociales te manipulan?",
+        "traduccion_didactica": "Reconoce la influencia externa o invisible en la toma de decisiones (datos, algoritmos, fuentes, autoridad).",
+        "imagen": "tension_3.png",
+        "funcion_simbolica": "Provoca una pregunta difícil.",
+        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
     }
 ]
 
 arcanos_ergodicos = [
     {
-        "titulo": "ADICIÓN",
-        "gesto": "Añade una capa. Inserta un nuevo elemento que cambie por completo el significado de la historia original.",
-        "imagen": "adicion.png"
+        "titulo": "Adición", "imagen": "adicion.png",
+        "aplicacion_generica": "Agrega un elemento disruptivo (dato nuevo, variable, personaje, condición límite).",
+        "funcion_simbolica": "Interviene. Transforma.",
+        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
     },
     {
-        "titulo": "OMISIÓN",
-        "gesto": "Crea un vacío. Elimina el elemento más obvio o importante de la narrativa. ¿Qué nueva historia emerge del silencio?",
-        "imagen": "omision.png"
+        "titulo": "Omisión", "imagen": "omision.png",
+        "aplicacion_generica": "Elimina una pieza clave y analiza cómo cambia el sistema, discurso o fenómeno.",
+        "funcion_simbolica": "Interviene. Transforma.",
+        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
     },
     {
-        "titulo": "TRANSPOSICIÓN",
-        "gesto": "Altera la secuencia. Narra la historia desde el final hacia el principio.",
-        "imagen": "transposicion.png"
+        "titulo": "Transposición", "imagen": "transposicion.png",
+        "aplicacion_generica": "Reorganiza los pasos, eventos, etapas o argumentos. Cambia el orden y observa los efectos.",
+        "funcion_simbolica": "Interviene. Transforma.",
+        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
     },
     {
-        "titulo": "PERMUTACIÓN",
-        "gesto": "Invierte la función. Toma un objeto y dale el significado de otro.",
-        "imagen": "permutacion.png"
+        "titulo": "Permutación", "imagen": "permutacion.png",
+        "aplicacion_generica": "Intercambia funciones, roles o significados entre dos elementos del sistema.",
+        "funcion_simbolica": "Interviene. Transforma.",
+        "aplicacion_transversal": "Modifica un proceso, estructura o producto para ver qué revela el cambio."
     }
 ]
 
-caja_de_herramientas = [
+herramientas_del_creador = [
     {
-        "titulo": "EL MICRÓFONO AMPLIFICADOR",
-        "descripcion": "Para debates, pódcasts y la argumentación talentosa.",
-        "imagen": "microfono.png"
+        "titulo": "Pincel de la imaginación absoluta", "imagen": "pincel.png",
+        "aplicacion_didactica": "Representa con arte visual (collage, dibujo, maqueta, prototipo, mapa creativo).",
+        "traduccion_ia": "🎨 DALL·E, Midjourney, Leonardo AI → generar ilustraciones, collages, concept art."
     },
     {
-        "titulo": "LA LIRA SONORA",
-        "descripcion": "Armoniza melodías y sentimientos, convirtiendo cualquier tema en una sinfonía viva.",
-        "imagen": "lira.png"
+        "titulo": "Lente de recuerdos infinitos", "imagen": "lente.png",
+        "aplicacion_didactica": "Usa fotos, documentación, archivo visual o narrativas del pasado.",
+        "traduccion_ia": "🖼️ RunwayML (para remixar), Photoshop AI, o GPT + imagen como asistente de análisis narrativo de fotos."
     },
-    {
-        "titulo": "EL ESPEJO DE ROSTROS",
-        "descripcion": "Revela rostros y emociones únicas, prestando un rostro humano a lo virtual.",
-        "imagen": "espejo.png"
-    },
-    {
-        "titulo": "PINCEL DE LA IMAGINACIÓN",
-        "descripcion": "Con un simple trazo, colores y formas infinitas cobran vida.",
-        "imagen": "pincel.png"
-    },
-    {
-        "titulo": "PERGAMINO DE VISIONES DINÁMICAS",
-        "descripcion": "Herramientas de visualización que no son diagramas estáticos, sino narrativas que guían.",
-        "imagen": "pergamino.png"
-    },
-    {
-        "titulo": "EL LIBRO DE ARENA",
-        "descripcion": "Palabras eternas que fluyen como granos de memoria. Investigación profunda.",
-        "imagen": "libro_de_arena.png"
-    },
-    {
-        "titulo": "EL LENTE DE LOS RECUERDOS",
-        "descripcion": "Este lente no solo observa recuerdos, sino que los guarda como un tesoro: reflexión y documentación.",
-        "imagen": "lente.png"
-    },
-    {
-        "titulo": "ARTE TERAPIA",
-        "descripcion": "En el reino de este pincel, los colores transforman no sólo el lienzo, sino también el espíritu.",
-        "imagen": "arteterapia.png"
-    },
-    {
-        "titulo": "EDUCACIÓN IMAGINATIVA",
-        "descripcion": "Uso de la imaginación: Somática, Mítica, Romántica, Filosófica e Irónica.",
-        "imagen": "imaginativa.png"
-    }
+    # ... (añade aquí el resto de las herramientas)
 ]
 
-# --- 2. Diseño de la Interfaz con Streamlit ---
 
-st.set_page_config(page_title="Tarot Docente", layout="wide")
+# --- 2. Interfaz de la Aplicación con Pestañas ---
 
-# Título de la aplicación
-st.title("🔮 Tarot Docente: diseña tu clase")
-st.write("Haz clic en un mazo para sacar una carta y encontrar inspiración.")
+st.title("🔮 Tarot Docente")
+st.write("Una herramienta para aplicar el pensamiento de diseño y la creatividad en el aula.")
 
-# Crear columnas para los botones
-col1, col2, col3, col4 = st.columns(4)
+tab1, tab2, tab3, tab4 = st.tabs(["✨ Arcanos Mayores", "💥 Arcanos de Tensión", "♻️ Arcanos Ergódicos", "🛠️ Herramientas del Creador"])
 
-with col1:
-    if st.button("Sacar Arcano Mayor"):
-        carta_seleccionada = random.choice(arcanos_mayores)
-        st.session_state.carta_actual = carta_seleccionada
-
-with col2:
-    if st.button("Sacar Arcano de Tensión"):
-        carta_seleccionada = random.choice(arcanos_de_tension)
-        st.session_state.carta_actual = carta_seleccionada
-
-with col3:
-    if st.button("Sacar Arcano Ergódico"):
-        carta_seleccionada = random.choice(arcanos_ergodicos)
-        st.session_state.carta_actual = carta_seleccionada
-        
-with col4:
-    if st.button("Sacar Herramienta"):
-        carta_seleccionada = random.choice(caja_de_herramientas)
-        st.session_state.carta_actual = carta_seleccionada
-
-# --- 3. Mostrar la Carta Seleccionada ---
-
-# Usamos st.session_state para "recordar" la última carta sacada
-if 'carta_actual' in st.session_state:
-    carta = st.session_state.carta_actual
+with tab1:
+    st.header("✨ Arcanos Mayores")
+    st.info("Función: Desestabilizar y cambiar el marco de referencia.")
     
-    st.markdown("---") # Una línea divisoria
+    # Botón para sacar una carta al azar
+    if st.button("Sacar un Arcano Mayor"):
+        carta = random.choice(arcanos_mayores)
+        st.subheader(carta["titulo"])
+        st.image(carta["imagen"])
+        st.write(f"_{carta['interpretacion']}_")
+        with st.expander("Ver Aplicación Didáctica 📖"):
+            st.success(f"**Aplicación Transversal:** {carta['aplicacion_transversal']}")
+            st.write(f"**Pregunta Clave:** {carta['pregunta_clave']}")
+
+with tab2:
+    st.header("💥 Arcanos de Tensión")
+    st.info("Función: Provocar una pregunta difícil y detectar conflictos ocultos.")
     
-    # Contenedor para la carta con un borde
-    with st.container(border=True):
-        # Mostrar la imagen si existe
-        if "imagen" in carta:
-            try:
-                # Streamlit buscará el archivo con este nombre en tu Space
-                st.image(carta["imagen"], use_column_width=True)
-            except Exception as e:
-                st.error(f"Error al cargar la imagen '{carta['imagen']}'. Asegúrate de que el archivo esté subido al Space.")
-        
-        # Mostrar el texto de la carta
-        if "titulo" in carta:
-            st.subheader(carta["titulo"])
-        if "descripcion" in carta:
-            st.write(f"_{carta['descripcion']}_")
-        if "aforismo" in carta:
-            st.write(f"**❝ {carta['aforismo']} ❞**")
-        if "pregunta" in carta:
-            st.write(f"**{carta['pregunta']}**")
-        if "gesto" in carta:
-            st.write(carta["gesto"])
+    if st.button("Sacar un Arcano de Tensión"):
+        carta = random.choice(arcanos_de_tension)
+        st.subheader("Pregunta Peligrosa")
+        st.image(carta["imagen"])
+        st.warning(f"**{carta['pregunta']}**")
+        with st.expander("Ver Traducción Didáctica 📖"):
+            st.success(f"**Aplicación:** {carta['traduccion_didactica']}")
+
+with tab3:
+    st.header("♻️ Arcanos Ergódicos")
+    st.info("Función: Intervenir y transformar un proceso para revelar algo nuevo.")
+
+    if st.button("Sacar un Arcano Ergódico"):
+        carta = random.choice(arcanos_ergodicos)
+        st.subheader(carta["titulo"])
+        st.image(carta["imagen"])
+        with st.expander("Ver Aplicación Didáctica 📖"):
+            st.success(f"**Aplicación Genérica:** {carta['aplicacion_generica']}")
+
+with tab4:
+    st.header("🛠️ Herramientas del Creador")
+    st.info("Función: Elegir el lenguaje para expresar y materializar ideas.")
+
+    if st.button("Sacar una Herramienta del Creador"):
+        carta = random.choice(herramientas_del_creador)
+        st.subheader(carta["titulo"])
+        st.image(carta["imagen"])
+        with st.expander("Ver Aplicación Didáctica 📖"):
+            st.success(f"**Aplicación Didáctica:** {carta['aplicacion_didactica']}")
+            st.info(f"**Sugerencia de IA:** {carta['traduccion_ia']}")
