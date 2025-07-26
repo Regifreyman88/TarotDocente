@@ -30,22 +30,6 @@ arcanos_mayores = [
     {
         "titulo": "El nudo gordiano", "imagen": "nudo.png",
         "interpretacion": "Enfrenta una contradicción o dilema sin solución evidente. Habita la paradoja antes de resolver.",
-        # --- MÓDULO DE APOYO ---
-# Este código añade una sección en la barra lateral
-
-st.sidebar.markdown("---")
-st.sidebar.header("Apoya este Proyecto")
-st.sidebar.write(
-    """
-    ¿Te han gustado estas herramientas? 
-    Tu apoyo me ayuda a seguir creando y mejorando más juegos educativos y creativos.
-    
-    ¡Gracias por tu generosidad!
-    """
-)
-
-# Reemplaza la URL con tu enlace personal de Buy Me a Coffee
-st.sidebar.link_button("Invítame un café ☕", "https://coff.ee/regifreyman8") # URL corta de tu página
         "pregunta_clave": "N/A",
         "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
         "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
@@ -56,7 +40,7 @@ arcanos_de_tension = [
     {
         "pregunta": "¿Qué historia te estás contando que entorpece tu camino?",
         "traduccion_didactica": "Identifica una narrativa limitante o una interpretación automatizada del problema.",
-        "imagen": "tension_1.png", # Asegúrate de tener los nombres correctos
+        "imagen": "tension_1.png",
         "funcion_simbolica": "Provoca una pregunta difícil.",
         "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
     },
@@ -105,71 +89,4 @@ arcanos_ergodicos = [
 
 herramientas_del_creador = [
     {
-        "titulo": "Pincel de la imaginación absoluta", "imagen": "pincel.png",
-        "aplicacion_didactica": "Representa con arte visual (collage, dibujo, maqueta, prototipo, mapa creativo).",
-        "traduccion_ia": "🎨 DALL·E, Midjourney, Leonardo AI → generar ilustraciones, collages, concept art."
-    },
-    {
-        "titulo": "Lente de recuerdos infinitos", "imagen": "lente.png",
-        "aplicacion_didactica": "Usa fotos, documentación, archivo visual o narrativas del pasado.",
-        "traduccion_ia": "🖼️ RunwayML (para remixar), Photoshop AI, o GPT + imagen como asistente de análisis narrativo de fotos."
-    },
-    # ... (añade aquí el resto de las herramientas)
-]
-
-
-# --- 2. Interfaz de la Aplicación con Pestañas ---
-
-st.title("🔮 Tarot Docente")
-st.write("Una herramienta para aplicar el pensamiento de diseño y la creatividad en el aula.")
-
-tab1, tab2, tab3, tab4 = st.tabs(["✨ Arcanos Mayores", "💥 Arcanos de Tensión", "♻️ Arcanos Ergódicos", "🛠️ Herramientas del Creador"])
-
-with tab1:
-    st.header("✨ Arcanos Mayores")
-    st.info("Función: Desestabilizar y cambiar el marco de referencia.")
-    
-    # Botón para sacar una carta al azar
-    if st.button("Sacar un Arcano Mayor"):
-        carta = random.choice(arcanos_mayores)
-        st.subheader(carta["titulo"])
-        st.image(carta["imagen"])
-        st.write(f"_{carta['interpretacion']}_")
-        with st.expander("Ver Aplicación Didáctica 📖"):
-            st.success(f"**Aplicación Transversal:** {carta['aplicacion_transversal']}")
-            st.write(f"**Pregunta Clave:** {carta['pregunta_clave']}")
-
-with tab2:
-    st.header("💥 Arcanos de Tensión")
-    st.info("Función: Provocar una pregunta difícil y detectar conflictos ocultos.")
-    
-    if st.button("Sacar un Arcano de Tensión"):
-        carta = random.choice(arcanos_de_tension)
-        st.subheader("Pregunta Peligrosa")
-        st.image(carta["imagen"])
-        st.warning(f"**{carta['pregunta']}**")
-        with st.expander("Ver Traducción Didáctica 📖"):
-            st.success(f"**Aplicación:** {carta['traduccion_didactica']}")
-
-with tab3:
-    st.header("♻️ Arcanos Ergódicos")
-    st.info("Función: Intervenir y transformar un proceso para revelar algo nuevo.")
-
-    if st.button("Sacar un Arcano Ergódico"):
-        carta = random.choice(arcanos_ergodicos)
-        st.subheader(carta["titulo"])
-        st.image(carta["imagen"])
-        with st.expander("Ver Aplicación Didáctica 📖"):
-            st.success(f"**Aplicación Genérica:** {carta['aplicacion_generica']}")
-
-with tab4:
-    st.header("🛠️ Herramientas del Creador")
-    st.info("Función: Elegir el lenguaje para expresar y materializar ideas.")
-
-    if st.button("Sacar una Herramienta del Creador"):
-        carta = random.choice(herramientas_del_creador)
-        st.subheader(carta["titulo"])
-        st.image(carta["imagen"])
-        with st.expander("Ver Aplicación Didáctica 📖"):
-            st.success(f"**Aplicación Didáctica:** {carta['aplicacion_didactica']}")
-            st.info(f"**Sugerencia de IA:** {carta['traduccion_ia']}")
+        "titulo": "P
