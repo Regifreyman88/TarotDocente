@@ -1,52 +1,7 @@
 import streamlit as st
-import random
 
-st.set_page_config(page_title="Tarot Docente", page_icon="🔮", layout="wide")
+st.title("Prueba de Funcionamiento ✅")
 
-# --- 1. Definición de TODOS los Mazos con Información Didáctica ---
+st.write("Si ves este mensaje, significa que el proceso de guardar y actualizar funciona correctamente.")
 
-arcanos_mayores = [
-    {
-        "titulo": "La cicatriz como texto", "imagen": "cicatriz.png",
-        "interpretacion": "Explora el error, el fallo o la ruptura como fuente de conocimiento.",
-        "pregunta_clave": "¿Qué nos enseña lo que salió mal?",
-        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
-        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
-    },
-    {
-        "titulo": "El exilio de la perspectiva", "imagen": "exilio.png",
-        "interpretacion": "Obliga a tomar otro punto de vista. Cambia de rol, contexto o escala.",
-        "pregunta_clave": "¿Cómo vería esto un otro radical?",
-        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
-        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
-    },
-    {
-        "titulo": "El oráculo engañoso", "imagen": "oraculo.png",
-        "interpretacion": "Identifica creencias asumidas, ideas falsas o simplificaciones.",
-        "pregunta_clave": "¿Qué parece cierto pero no lo es del todo?",
-        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
-        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
-    },
-    {
-        "titulo": "El nudo gordiano", "imagen": "nudo.png",
-        "interpretacion": "Enfrenta una contradicción o dilema sin solución evidente. Habita la paradoja antes de resolver.",
-        "pregunta_clave": "N/A",
-        "funcion_simbolica": "Desestabiliza. Invita a mirar desde otro ángulo.",
-        "aplicacion_transversal": "Cambia el marco. Observa lo que dabas por hecho."
-    }
-]
-
-arcanos_de_tension = [
-    {
-        "pregunta": "¿Qué historia te estás contando que entorpece tu camino?",
-        "traduccion_didactica": "Identifica una narrativa limitante o una interpretación automatizada del problema.",
-        "imagen": "tension_1.png",
-        "funcion_simbolica": "Provoca una pregunta difícil.",
-        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
-    },
-    {
-        "pregunta": "¿Qué perderías si no pudieras pensar creativamente?",
-        "traduccion_didactica": "Identifica la dependencia de un solo tipo de solución. Busca la función del pensamiento divergente.",
-        "imagen": "tension_2.png",
-        "funcion_simbolica": "Provoca una pregunta difícil.",
-        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
+st.balloons()
