@@ -46,13 +46,4 @@ arcanos_de_tension = [
     },
     {
         "pregunta": "¿Qué perderías si no pudieras pensar creativamente?",
-        "traduccion_didactica": "Identifica la dependencia de un solo tipo de solución. Busca la función del pensamiento divergente.",
-        "imagen": "tension_2.png",
-        "funcion_simbolica": "Provoca una pregunta difícil.",
-        "aplicacion_transversal": "Detecta el conflicto o sesgo oculto."
-    },
-    {
-        "pregunta": "¿Cuándo sientes que la IA o las redes sociales te manipulan?",
-        "traduccion_didactica": "Reconoce la influencia externa o invisible en la toma de decisiones (datos, algoritmos, fuentes, autoridad).",
-        "imagen": "tension_3.png",
-        "funcion_
+        "traduccion_didactica":
